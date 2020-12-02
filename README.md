@@ -1,4 +1,5 @@
-# Logfet
+# kosuke_portfolio
+## Logfet
 
 ## Discription of this app
 - This is life log application on web.
@@ -12,17 +13,18 @@
     3. How to deploy GAE.
 
 # Requirement
-
+    - python 3.8
+    - Use venv
+    - Use pip and pip install -r requirements.txt
 # How to Run
+    1. ```export FLASK_APP=logfet```
+    2. (if you want to hot reload ```export FLASK_ENV=development``` )
+    3. ``` flask run ```
 
 # How to Develop
-Use github and publish issues that divided by developing process noted below.
-- Build server by GAE
 - Connect Flask to database
 - Coding backend function and minimum html
 - Design frontend
-
-
 
 
 # Future of this app

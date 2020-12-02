@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}今の気持ちを教えて{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">タイトル</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required>
+    <label for="event">イベント</label>
+    <div>
+      <input type="checkbox" name="event" value="食事">食事
+      <input type="checkbox" name="event" value="仕事">仕事
+      <input type="checkbox" name="event" value="家事">家事
+      <input type="checkbox" name="event" value="運動">運動
+      <input type="checkbox" name="event" value="お金">お金
+      <input type="checkbox" name="event" value="ファッション">ファッション
+    </div>
+    <div>
+      <input type="checkbox" name="event" value="趣味・娯楽">趣味・娯楽
+      <input type="checkbox" name="event" value="芸術・観賞">芸術・観賞
+      <input type="checkbox" name="event" value="創作">創作
+      <input type="checkbox" name="event" value="恋人・恋愛">恋人・恋愛
+      <input type="checkbox" name="event" value="家族">家族
+      <input type="checkbox" name="event" value="友人">友人
+    </div>
+    <div>
+      <input type="checkbox" name="event" value="旅行">旅行
+      <input type="checkbox" name="event" value="勉強・自己投資">勉強・自己投資
+      <input type="checkbox" name="event" value="飲酒">飲酒
+      <input type="checkbox" name="event" value="喫煙">喫煙
+    </div>
+    <label for="feeling">気持ち</label>
+    <div>
+      <input type="checkbox" name="feeling" value="嬉しい">嬉しい
+      <input type="checkbox" name="feeling" value="興味深い">興味深い
+      <input type="checkbox" name="feeling" value="楽しい">楽しい
+      <input type="checkbox" name="feeling" value="リラックス">リラックス
+      <input type="checkbox" name="feeling" value="ワクワク">ワクワク
+    </div>
+    <div>
+      <input type="checkbox" name="feeling" value="愛しい">愛しい
+      <input type="checkbox" name="feeling" value="絆を感じた">絆を感じた
+      <input type="checkbox" name="feeling" value="感動した">感動した
+      <input type="checkbox" name="feeling" value="刺激を受けた">刺激を受けた
+      <input type="checkbox" name="feeling" value="悲しい">悲しい
+      <input type="checkbox" name="feeling" value="悔しい">悔しい
+    </div>
+    <div>
+      <input type="checkbox" name="feeling" value="怒り">怒り
+      <input type="checkbox" name="feeling" value="むなしい">むなしい
+      <input type="checkbox" name="feeling" value="ほろ苦い">ほろ苦い
+      <input type="checkbox" name="feeling" value="つらい">つらい
+      <input type="checkbox" name="feeling" value="嫉妬した">嫉妬した
+      <input type="checkbox" name="feeling" value="不快">不快
+    </div>
+    <label for="content">本文</label>
+    <textarea name="content" id="content">{{ request.form['content'] }}</textarea>
+    <input type="submit" value="投稿する">
+  </form>
+{% endblock %}
