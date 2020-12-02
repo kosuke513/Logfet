@@ -11,17 +11,17 @@
 
 ## Purpose of develop
 - Webアプリケーションの作り方を学びたかった。具体的には以下
-    1. データベースの作り方や操作の仕方、接続について知りたかった
-    2. バックエンドの経験に乏しかったので、実装したかった
-    3. デプロイの方法が知りたかった、今回はGAEでおこなう
+    - データベースの作り方や操作の仕方、接続について知りたかった
+    - バックエンドの経験に乏しかったので、実装したかった
+    - デプロイの方法が知りたかった、今回はGAEでおこなう
 ## Requirement
-    - Use python 3.8
-    - Use venv
-    - Use pip and Do `pip install -r requirements.txt`
+- Use python 3.8
+- Use venv
+- Use pip and Do `pip install -r requirements.txt`
 ### How to Run
-    1. `export FLASK_APP=logfet`
-    2. (if you want to hot reload `export FLASK_ENV=development` )
-    3. ` flask run `
+1. `export FLASK_APP=logfet`
+2. (if you want to hot reload `export FLASK_ENV=development` )
+3. ` flask run `
 
 ## 今後開発するとしたら
 - まだタグ付けされてない投稿とタグ付けされている投稿の両方をうまく表示できるように関数を組めていないです
