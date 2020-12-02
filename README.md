@@ -1,33 +1,30 @@
-# kosuke_portfolio
-## Logfet
+# Logfet
 
 ## Discription of this app
-- This is life log application on web.
-- Logfet is this app's name. It means "Log Feeling Every Thing/Time"
-- You can tag and record what you feel in your day-to-day, with tagging multiple emotions and events.
+- ライフログのアプリケーションです。
+- Logfet がこのアプリケーションの名前で、"Log Feeling Every Thing/Time" を意味しています。
+- 出来事や感情に対してタグ付けして日記をつけることができます。
 
-## Purpose of this program
-- Learning How to make web application,specificaly below.
-    1. How to create and use database/SQL.
-    2. How to code functions of backend
-    3. How to deploy GAE.
+## References
+- 基本的にはFlaskのチュートリアルを参考にしています。その上で、SQL Alchemyを利用して、MySQLに接続しています。
 
-# Requirement
-    - python 3.8
+## Purpose of develop
+- Webアプリケーションの作り方を学びたかった。具体的には以下
+    1. データベースの作り方や操作の仕方、接続について知りたかった
+    2. バックエンドの経験に乏しかったので、実装したかった
+    3. デプロイの方法が知りたかった、今回はGAEでおこなう
+## Requirement
+    - Use python 3.8
     - Use venv
-    - Use pip and pip install -r requirements.txt
-# How to Run
+    - Use pip and Do ```pip install -r requirements.txt```
+### How to Run
     1. ```export FLASK_APP=logfet```
     2. (if you want to hot reload ```export FLASK_ENV=development``` )
     3. ``` flask run ```
 
-# How to Develop
-- Connect Flask to database
-- Coding backend function and minimum html
-- Design frontend
-
-
-# Future of this app
-- Brush up design to overview easily by Graph.
-- Analyze the emotions and suggest the right behavior for the user.
-- Make list of friend and enable watch friend's log that they allow.
+## 今後開発するとしたら
+- まだタグ付けされてない投稿とタグ付けされている投稿の両方をうまく表示できるように関数を組めていないです
+- 感情や出来事について集計してグラフとして示したり、感情や出来事ごとに記事の検索をかけたいです
+- フロントエンドはまるまるFlask Tutorialのまんまなので変更していきたいです
+- 許可された日記については他のユーザーのものも見れるようにしたいです
+- 感情や出来事から分析して、ユーザーにあった行動をおすすめできるようにしたいです
