@@ -3,7 +3,7 @@
 {% block header %}
   <h1>{% block title %}Posts{% endblock %}</h1>
   {% if g.user %}
-    <a class="action" href="{{ url_for('post_router.create') }}">投稿する</a>
+    <a class="action" href="{{ url_for('create') }}">投稿する</a>
   {% endif %}
 {% endblock %}
 
@@ -15,18 +15,22 @@
           <h1>{{ post.title }}</h1>
           <div class="about">作成日:{{ post.created_at.strftime('%Y年%m月%d日 %H:%M') }}　　更新日:{{ post.updated_at.strftime('%Y年%m月%d日 %H:%M') }}</div>
         </div>
-          <a class="action" href="{{ url_for('post_router.update', id=post.id) }}">編集する</a>
+          <a class="action" href="{{ url_for('update', id=post.id) }}">編集する</a>
       </header>
-      <div>カテゴリ：
-        {% for event in post.events %}
-          <span>#{{ event.event }}　</span>
-        {% endfor%}
-      </div>
-      <div>気持ち：
-        {% for feeling in post.feelings %}
-          <span>#{{ feeling.feeling }}　</span>
-        {% endfor%}
-      </div>
+      {% if post.events %}
+        <div>カテゴリ：
+          {% for event in post.events %}
+            <span>#{{ event.event }}　</span>
+          {% endfor%}
+        </div>
+      {% endif %}
+      {% if post.feelings %}
+        <div>気持ち：
+          {% for feeling in post.feelings %}
+            <span>#{{ feeling.feeling }}　</span>
+          {% endfor%}
+        </div>
+      {% endif %}
       <p class="body">{{ post.content }}</p>
     </article>
     {% if not loop.last %}

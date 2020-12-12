@@ -1,5 +1,14 @@
-from ..database import db
-from crypt import *
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+class Users(db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    email = db.Column(db.String)
+    password = db.Column(db.String)
+    created_at = db.Column(db.DateTime)
 
 class Posts(db.Model):
     __tablename__ = 'posts'
@@ -31,3 +40,5 @@ class Events(db.Model):
     event = db.Column(db.String(30),nullable=False)
 
     post = db.relation("Posts")
+
+print(__name__)
