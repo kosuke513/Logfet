@@ -115,6 +115,7 @@ def index(id):
         .filter(Posts.user_id == g.user.id)\
         .outerjoin(Feelings) \
         .outerjoin(Events) \
+        .order_by(Posts.id.desc()) \
         .all()
     return render_template("index.html", posts=posts)
 
