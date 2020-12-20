@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Toppage{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="concept-wrapper">
+    <img src="https://sogyotecho.jp/wp-content/uploads/2017/06/0b0ca1cf06e57bf1710f836f1c8160b8.jpg"/>
+    <h2>ちょっとしたキモチも、大きな感動も、全部のこそう。</h2>
+</div>
+<div class="login-wrapper">
+    <div class="btn-container">
+        <p>はじめての方</p>
+        <div><a href="{{ url_for('signup') }}">登録する</a></div>
+    </div>
+    <div class="btn-container">
+        <p>登録済みの方</p>
+        <div><a href="{{ url_for('login') }}">ログイン</a></div>
+    </div>
+</div>
+{% endblock %}

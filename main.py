@@ -15,7 +15,11 @@ print(__name__)
 
 @app.route('/',methods=['GET'])
 def top():
-  return 'hello, hogehoge!'
+    user_id = session.get('user_id')
+    if user_id is None:
+        return redirect(url_for('login'))
+    else:
+        return redirect(url_for('index',id=user_id))
 
 #User系
 @app.route('/signup', methods=('GET','POST'))

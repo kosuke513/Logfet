@@ -128,6 +128,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# Secret file
-logfet-298314-1fb80298d754.json

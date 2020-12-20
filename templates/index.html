@@ -3,7 +3,7 @@
 {% block header %}
   <h1>{% block title %}Posts{% endblock %}</h1>
   {% if g.user %}
-    <a class="action" href="{{ url_for('create') }}">投稿する</a>
+    <a class="post_btn" href="{{ url_for('create') }}">投稿する</a>
   {% endif %}
 {% endblock %}
 
@@ -12,22 +12,22 @@
     <article class="post">
       <header>
         <div>
-          <h1>{{ post.title }}</h1>
+          <h2>{{ post.title }}</h2>
           <div class="about">作成日:{{ post.created_at.strftime('%Y年%m月%d日 %H:%M') }}　　更新日:{{ post.updated_at.strftime('%Y年%m月%d日 %H:%M') }}</div>
         </div>
           <a class="action" href="{{ url_for('update', id=post.id) }}">編集する</a>
       </header>
       {% if post.events %}
-        <div>カテゴリ：
+        <div><span class="tag">カテゴリ</span>
           {% for event in post.events %}
-            <span>#{{ event.event }}　</span>
+            <span class="tags">#{{ event.event }}　</span>
           {% endfor%}
         </div>
       {% endif %}
       {% if post.feelings %}
-        <div>気持ち：
+        <div><span class="tag_f">気持ち</span>
           {% for feeling in post.feelings %}
-            <span>#{{ feeling.feeling }}　</span>
+            <span class="tags">#{{ feeling.feeling }}　</span>
           {% endfor%}
         </div>
       {% endif %}
